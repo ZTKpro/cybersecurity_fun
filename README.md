@@ -1,5 +1,8 @@
 # Malware for Fun 🎉
 
+![Alt text](https://github.com/ZTKpro/cybersecurity_fun/blob/main/hacked.png)
+
+
 ## 🤖 Just for Fun!
 
 This repository contains a collection of **harmless malware-inspired scripts**, made purely for fun and to expand my understanding of cybersecurity and ethical hacking. These files are here just to mess around, experiment, and learn more about how malware behaves in a **controlled, safe environment**.
