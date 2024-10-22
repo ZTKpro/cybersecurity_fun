@@ -1,0 +1,17 @@
+REM Author: DS
+REM Description: Opens a Website with a fake Bluescreen and sets it to fullscreen
+REM Version:	1.0
+REM Category:	FUN
+
+DEFAULTDELAY 100
+DEFAULTSTRINGDELAY 1
+
+
+GUI r
+DELAY 200
+STRINGLN cmd
+ENTER
+DELAY 500
+STRINGLN start chrome https://fakeupdate.net/win10ue/
+DELAY 2000
+F11
